@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.cn.ms.dao.DoctorDao">
+
+<select id="tree" parameterType="String" resultType="com.cn.ms.entity.TreeBean">
+	select id as "id",
+			name as "name",
+			sectionId as "pId"
+	from ms_doctor 
+	where sectionId = #{id}
+</select>
+
+<select id="docInfo" parameterType="String" resultType="com.cn.ms.entity.DoctorBean">
+	select id,password,name,sectionId,sex,info
+	from ms_doctor 
+	where id = #{id}
+</select>
+
+<select id="findAll" resultType="Intger">
+	select count(*) 
+	from ms_doctor
+</select>
+
+<slect id="findByNum" resultType="com.cn.ms.entity.DoctorBean">
+	select select id,password,name,sectionId,sex,info
+	from ms_doctor
+	limit #{0},#{1}
+</slect>
+
+</mapper>
