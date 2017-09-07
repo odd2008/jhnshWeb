@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.cn.ms.dao.PatientDao">
+	
+<select id="checkReg" parameterType="string" resultType="com.cn.ms.entity.RegUser">
+    select * 
+    from MS_PATIENT
+    where id = #{string}
+		
+</select>	
+	
+<select id="selectName" parameterType="string" resultType="string">
+	 select name
+	 from MS_PATIENT
+	 where id = #{string}
+</select>
+	
+<select id="selectAll" parameterType="string" resultType="com.cn.ms.entity.RegInfo">
+	select c.name,b.name as "doctorName",a.date,a.num
+	from (select date,doctorId,patientId,num 
+		from ms_date
+		where patientId = #{id}) a,ms_doctor b,ms_patient c
+	where a.doctorId = b.id and a.patientId = c.id
+</select>
+	
+</mapper>
+
