@@ -29,16 +29,16 @@ import com.cn.ms.util.JsonResult;
 public class MsController {
 	@Autowired
 	private CheckService checkService;
-	
+
 	@Autowired
 	private TreeService treeService;
-	
+
 	@Autowired
 	private InfoService infoService;
-	
+
 	@Autowired
 	private TimeService timeService;
-	
+
 	@RequestMapping("/index")
 	public String index(){
 		return "index";
@@ -51,7 +51,7 @@ public class MsController {
 	public String login1(){
 		return "login1";
 	}
-	
+
 	/**
 	 * 医生登录页面
 	 * @return
@@ -60,7 +60,7 @@ public class MsController {
 	public String login2(){
 		return "login2";
 	}
-	
+
 	//患者 :检查登录账号密码
 	@RequestMapping("/check1")
 	@ResponseBody
@@ -70,7 +70,7 @@ public class MsController {
 		 JsonResult<RegUser> result = checkService.checkReg(id,password);
 		 return  result;
 	}
-	
+
 	//医生 :检查登录账号密码
 		@RequestMapping("/check2")
 		@ResponseBody
@@ -80,7 +80,7 @@ public class MsController {
 			 JsonResult<DoctorBean> result = checkService.checkReg2(id,password);
 			 return  result;
 		}
-		
+
 	@RequestMapping("/choose")
 	public ModelAndView choose(HttpServletRequest req,ModelAndView view){
 		String id = req.getParameter("id");
@@ -105,12 +105,12 @@ public class MsController {
 		view.setViewName("choose2");
 		return view;
 	}
-	
+
     @RequestMapping("/register")
     public String register(){
     	return "register";
     }
-    
+
     /**
      * 组织树的异步请求
      * @param id
@@ -122,7 +122,7 @@ public class MsController {
     	List<TreeBean> list = treeService.select(id);
     	return list;
     }
-    
+
     @RequestMapping("/edit")
     public ModelAndView edit(ModelAndView view,String id,HttpServletRequest req){
     	DoctorBean bean = infoService.docInfo(id);
@@ -133,10 +133,9 @@ public class MsController {
     	view.addObject("docInfo",bean);
     	view.addObject("time",timeBean);
     	view.setViewName("register-edit");
-    	
     	return view;
     }
-    
+
 
     //医生进入设置页面
     @RequestMapping("/setup")
@@ -147,9 +146,9 @@ public class MsController {
 		view.addObject("docInfo",bean);
 		view.setViewName("setup");
 		return view;
-    	
+
     }
-    
+
     //ajax设置医生的预约时间
     @RequestMapping("/savetime")
     @ResponseBody
@@ -162,7 +161,7 @@ public class MsController {
     	result.setState("1");
     	return result;
     }
-    
+
     @RequestMapping("/guahao")
     @ResponseBody
     public JsonResult<String> guahao(String docId,String index,HttpServletRequest req){
@@ -177,10 +176,10 @@ public class MsController {
     	view(view,id);
     	view.addObject("regInfo",list);
     	view.setViewName("register-info");
-    	
+
     	return view;
     }
-    
+
     @RequestMapping("/record2")
     public ModelAndView edit2(ModelAndView view,HttpServletRequest req){
     	HttpSession session = req.getSession();
@@ -190,14 +189,14 @@ public class MsController {
     	view.addObject("infobean",bean);
     	view.addObject("name",name);
     	view.setViewName("doctor-info");
-    	
+
     	return view;
     }
-    
+
     public ModelAndView view(ModelAndView view,String id){
     	String name = infoService.checkName(id);
     	view.addObject("name",name);
-    	
+
     	return view;
     }
 }
