@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="551c1e0e-1328-439d-b73b-ef45e2f83af2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cn/ms/controller/MsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/cn/ms/controller/MsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cn/ms/interceptors/MyInterceptors.java" afterPath="$PROJECT_DIR$/src/main/java/com/cn/ms/interceptors/MyInterceptors.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -561,12 +559,20 @@
       <workItem from="1503403516612" duration="73000" />
       <workItem from="1503403592566" duration="2000" />
       <workItem from="1504775848299" duration="726000" />
-      <workItem from="1504835955613" duration="194000" />
+      <workItem from="1504835955613" duration="335000" />
     </task>
+    <task id="LOCAL-00001" summary="更新">
+      <created>1504836285309</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1504836285310</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1337000" />
+    <option name="totallyTimeSpent" value="1478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -622,6 +628,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
